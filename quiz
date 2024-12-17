@@ -1,0 +1,52 @@
+def quiz():
+    questions = [
+        {
+            "question": "What is the capital of AndhraPradesh?",
+            "options": ["A) Amaravathi", "B) Vizag", "C) Rajahmundry", "D) Amalapuram"],
+            "answer": "A"
+        },
+        {
+            "question": "Who is the cheif minister of AndhraPradesh?",
+            "options": ["A) Jagan", "B) Lokesh", "C) Chandhrababu", "D) Pawankalyan"],
+            "answer": "C"
+        },
+        {
+            "question": "Who invented Python?",
+            "options": ["A) Albert", "B) Rossum", "C) Steven", "D) Greek"],
+            "answer": "B"
+        },
+        {
+            "question": "Who is founder of youngbot Academy'?",
+            "options": ["A) srinivasarao", "B) navyasree", "C) sunil pandey", "D) prabhas"],
+            "answer": "B"
+        },
+        {
+            "question": "What is the square root of 64?",
+            "options": ["A) 6", "B) 7", "C) 8", "D) 9"],
+            "answer": "C"
+        }
+    ]
+    score = 0
+
+    print("\nWelcome to the Quiz!\n")
+    for idx, q in enumerate(questions, start=1):
+        print(f"Question {idx}: {q['question']}")
+        for option in q["options"]:
+            print(option)
+        user_answer = input("Your answer (A/B/C/D): ").strip().upper()
+        if user_answer == q["answer"]:
+            print("✅ Correct!\n")
+            score += 1
+        else:
+            print(f"❌ Wrong! The correct answer is {q['answer']}.\n")
+    print(f"Quiz Completed! Your final score is: {score}/{len(questions)}")
+    percentage = (score / len(questions)) * 100
+    print(f"You scored {percentage:.2f}%.")
+    if score == len(questions):
+        print(" Excellent! You got all the answers right!")
+    elif score >= len(questions) // 2:
+        print(" Good job! You did well.")
+    else:
+        print(" Better luck next time! Keep practicing.")
+if __name__ == "__main__":
+    quiz()
